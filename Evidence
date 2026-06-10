@@ -7,7 +7,7 @@ Each artifact is mapped to its corresponding MITRE ATT&CK technique and attack p
 
 ---
 
-## 📁 Evidence Artifacts Mapping
+## 📁 Evidence Artifacts Mapping  
 
 ---
 
@@ -22,9 +22,9 @@ Each artifact is mapped to its corresponding MITRE ATT&CK technique and attack p
 - Download cradle execution (`Net.WebClient`, `IEX`)  
 - Suspicious flags (`-ExecutionPolicy Bypass`, `-WindowStyle Hidden`)  
 
-**Screenshot:**
+**Screenshot:**  
 
-![PowerShell Execution](Evidence-Galary/powershell_execution.png)
+![PowerShell Execution](./Evidence-Gallery/powershell_execution.png)
 
 ---
 
@@ -40,9 +40,9 @@ Each artifact is mapped to its corresponding MITRE ATT&CK technique and attack p
 - Trigger: PowerShell script (`dc_update.ps1`)  
 - Execution context: SYSTEM  
 
-**Screenshot:**
+**Screenshot:**  
 
-![Scheduled Task](Evidence-Galary/Scheduled_Task_Creation.png)
+![Scheduled Task](./Evidence-Gallery/Scheduled_Task_Creation.png)
 
 ---
 
@@ -57,9 +57,9 @@ Each artifact is mapped to its corresponding MITRE ATT&CK technique and attack p
 - Execution binary: `rundll32.exe`  
 - Execution context: compromised user session  
 
-**Screenshot:**
+**Screenshot:**  
 
-![Registry Run Key](Evidence-Galary/registry_run_key.png)
+![Registry Run Key](./Evidence-Gallery/registry_run_key.png)
 
 ---
 
@@ -75,9 +75,9 @@ Each artifact is mapped to its corresponding MITRE ATT&CK technique and attack p
 - Output: `lsass.dmp`  
 - Access method: `-ma` full memory dump  
 
-**Screenshot:**
+**Screenshot:**  
 
-![LSASS Dump](Evidence-Galary/lsass_dump.png)
+![LSASS Dump](./Evidence-Gallery/lsass_dump.png)
 
 ---
 
@@ -93,9 +93,9 @@ Each artifact is mapped to its corresponding MITRE ATT&CK technique and attack p
 - Event ID: 4662  
 - Permissions: DS-Replication-Get-Changes  
 
-**Screenshot:**
+**Screenshot:**  
 
-![DCSync Event](Evidence-Galary/dcsync_event.png)
+![DCSync Event](./Evidence-Gallery/dcsync_event.png)
 
 ---
 
@@ -110,9 +110,9 @@ Each artifact is mapped to its corresponding MITRE ATT&CK technique and attack p
 - Scheduled task creation anomaly  
 - DNS tunneling indicators  
 
-**Screenshot:**
+**Screenshot:**  
 
-![Elastic Alert](Evidence-Galary/elastic_alert.png)
+![Elastic Alert](./Evidence-Gallery/elastic_alert.png)
 
 ---
 
@@ -127,9 +127,9 @@ Each artifact is mapped to its corresponding MITRE ATT&CK technique and attack p
 - TXT record traffic spikes  
 - Large query frequency (~1,408 bytes per request)  
 
-**Screenshot:**
+**Screenshot:**  
 
-![DNS Tunnel](Evidence-Galary/dns_tunnel.png)
+![DNS Tunnel](./Evidence-Gallery/dns_tunnel.png)
 
 ---
 
@@ -146,4 +146,4 @@ Initial Access → Execution → Persistence → Credential Access → Privilege
 - Windows Event Logs (4688, 4624, 4698, 4662)  
 - Process execution telemetry  
 - DNS logs  
-- Elastic Security alerts  
+- Elastic Security alerts
