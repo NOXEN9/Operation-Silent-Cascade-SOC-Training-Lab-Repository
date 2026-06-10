@@ -140,15 +140,5 @@ Initial Access → Execution → Persistence → Credential Access → Privilege
 - DNS query logs
 - Elastic Security alerts
 
-**Visual Representation (Mermaid):**
 
-```mermaid
-graph TD
-A[Phishing Email - T1566.001]
---> B[PowerShell Execution - T1059.001]
---> C[Persistence - Scheduled Task / Registry]
---> D[LSASS Dump - T1003.001]
---> E[DCSync Attack - T1003.006]
---> F[Lateral Movement - SMB]
---> G[DNS Exfiltration - T1048.003]
 --> H[Elastic Detection Alert]
