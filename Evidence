@@ -139,6 +139,3 @@ Initial Access → Execution → Persistence → Credential Access → Privilege
 - Process execution telemetry
 - DNS query logs
 - Elastic Security alerts
-
-
---> H[Elastic Detection Alert]
