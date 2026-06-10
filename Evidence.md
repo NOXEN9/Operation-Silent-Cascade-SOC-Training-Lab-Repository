@@ -1,0 +1,149 @@
+# Operation Silent Cascade — Evidence Gallery  
+
+## Overview  
+
+This section contains key forensic and detection artifacts collected during the investigation of **Incident INC-2024-07182**.  
+Each artifact is mapped to its corresponding MITRE ATT&CK technique and attack phase.  
+
+---
+
+## 📁 Evidence Artifacts Mapping  
+
+---
+
+## 1. Execution Phase — PowerShell Activity  
+
+**Technique:** T1059.001 — PowerShell Execution  
+**Phase:** Initial Access / Execution  
+**Description:** Initial payload execution triggered from Excel macro.  
+
+**Evidence:**
+- Excel spawning PowerShell process  
+- Download cradle execution (`Net.WebClient`, `IEX`)  
+- Suspicious flags (`-ExecutionPolicy Bypass`, `-WindowStyle Hidden`)  
+
+**Screenshot:**  
+
+![PowerShell Execution](./Evidence-Gallery/powershell_execution.png)
+
+---
+
+## 2. Persistence — Scheduled Task Creation  
+
+**Technique:** T1053.005 — Scheduled Task  
+**Phase:** Persistence  
+**Description:** SYSTEM-level scheduled task established for persistence.  
+
+**Evidence:**
+- Task name: `DCSyncJob`  
+- Execution interval: every 30 minutes  
+- Trigger: PowerShell script (`dc_update.ps1`)  
+- Execution context: SYSTEM  
+
+**Screenshot:**  
+
+![Scheduled Task](./Evidence-Gallery/Scheduled_Task_Creation.png)
+
+---
+
+## 3. Persistence — Registry Run Key  
+
+**Technique:** T1547.001 — Registry Run Key  
+**Phase:** Persistence  
+**Description:** Registry-based autostart persistence mechanism.  
+
+**Evidence:**
+- Key path: `Software\Microsoft\Windows\CurrentVersion\Run`  
+- Execution binary: `rundll32.exe`  
+- Execution context: compromised user session  
+
+**Screenshot:**  
+
+![Registry Run Key](./Evidence-Gallery/registry_run_key.png)
+
+---
+
+## 4. Credential Access — LSASS Dump  
+
+**Technique:** T1003.001 — OS Credential Dumping  
+**Phase:** Credential Access  
+**Description:** LSASS memory dump for credential extraction.  
+
+**Evidence:**
+- Tool: `procdump64.exe`  
+- Target: `lsass.exe`  
+- Output: `lsass.dmp`  
+- Access method: `-ma` full memory dump  
+
+**Screenshot:**  
+
+![LSASS Dump](./Evidence-Gallery/lsass_dump.png)
+
+---
+
+## 5. Credential Access — DCSync Activity  
+
+**Technique:** T1003.006 — DCSync  
+**Phase:** Privilege Escalation / Domain Compromise  
+**Description:** Active Directory replication abuse targeting `krbtgt`.  
+
+**Evidence:**
+- Tool: `mimikatz lsadump::dcsync`  
+- Target account: `krbtgt`  
+- Event ID: 4662  
+- Permissions: DS-Replication-Get-Changes  
+
+**Screenshot:**  
+
+![DCSync Event](./Evidence-Gallery/dcsync_event.png)
+
+---
+
+## 6. Detection Layer — Elastic Security Alert  
+
+**Phase:** Detection / Correlation  
+**Description:** Multi-signal correlation alert triggered in Elastic Stack.  
+
+**Detected Patterns:**
+- Office → PowerShell execution chain  
+- LSASS memory access behavior  
+- Scheduled task creation anomaly  
+- DNS tunneling indicators  
+
+**Screenshot:**  
+
+![Elastic Alert](./Evidence-Gallery/elastic_alert.png)
+
+---
+
+## 7. Exfiltration — DNS Tunneling  
+
+**Technique:** T1048.003 — DNS Exfiltration  
+**Phase:** Exfiltration  
+**Description:** Data exfiltration via DNS TXT record abuse.  
+
+**Evidence:**
+- High entropy Base64 subdomains  
+- TXT record traffic spikes  
+- Large query frequency (~1,408 bytes per request)  
+
+**Screenshot:**  
+
+![DNS Tunnel](./Evidence-Gallery/dns_tunnel.png)
+
+---
+
+## 8. Attack Correlation View  
+
+**Description:** End-to-end attack lifecycle correlation across all telemetry sources.  
+
+**Kill Chain Summary:**
+
+Initial Access → Execution → Persistence → Credential Access → Privilege Escalation → Lateral Movement → Exfiltration → Detection  
+
+**Telemetry Sources:**
+- Email logs  
+- Windows Event Logs (4688, 4624, 4698, 4662)  
+- Process execution telemetry  
+- DNS logs  
+- Elastic Security alerts  
