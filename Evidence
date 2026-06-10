@@ -24,7 +24,7 @@ Each artifact is mapped to its corresponding MITRE ATT&CK technique and attack p
 
 **Screenshot:**  
 
-![PowerShell Execution](./Evidence-Gallery/powershell_execution.png)
+![PowerShell Execution](Evidence-Gallery/powershell_execution.png)
 
 ---
 
@@ -42,7 +42,7 @@ Each artifact is mapped to its corresponding MITRE ATT&CK technique and attack p
 
 **Screenshot:**  
 
-![Scheduled Task](./Evidence-Gallery/Scheduled_Task_Creation.png)
+![Scheduled Task](Evidence-Gallery/Scheduled_Task_Creation.png)
 
 ---
 
@@ -59,7 +59,7 @@ Each artifact is mapped to its corresponding MITRE ATT&CK technique and attack p
 
 **Screenshot:**  
 
-![Registry Run Key](./Evidence-Gallery/registry_run_key.png)
+![Registry Run Key](Evidence-Gallery/registry_run_key.png)
 
 ---
 
@@ -77,7 +77,7 @@ Each artifact is mapped to its corresponding MITRE ATT&CK technique and attack p
 
 **Screenshot:**  
 
-![LSASS Dump](./Evidence-Gallery/lsass_dump.png)
+![LSASS Dump](Evidence-Gallery/lsass_dump.png)
 
 ---
 
@@ -95,7 +95,7 @@ Each artifact is mapped to its corresponding MITRE ATT&CK technique and attack p
 
 **Screenshot:**  
 
-![DCSync Event](./Evidence-Gallery/dcsync_event.png)
+![DCSync Event](Evidence-Gallery/dcsync_event.png)
 
 ---
 
@@ -112,7 +112,7 @@ Each artifact is mapped to its corresponding MITRE ATT&CK technique and attack p
 
 **Screenshot:**  
 
-![Elastic Alert](./Evidence-Gallery/elastic_alert.png)
+![Elastic Alert](Evidence-Gallery/elastic_alert.png)
 
 ---
 
@@ -129,7 +129,7 @@ Each artifact is mapped to its corresponding MITRE ATT&CK technique and attack p
 
 **Screenshot:**  
 
-![DNS Tunnel](./Evidence-Gallery/dns_tunnel.png)
+![DNS Tunnel](Evidence-Gallery/dns_tunnel.png)
 
 ---
 
