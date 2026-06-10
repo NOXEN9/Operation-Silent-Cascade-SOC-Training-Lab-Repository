@@ -51,3 +51,4 @@ On September 16, 2024, a finance department user on `WORKSTATION-01` received a 
 | [Attack Timeline](timeline.md) | Chronological event log with Mermaid.js sequence diagram visualizing the full kill chain |
 | [MITRE ATT&CK Mapping](mitre_mapping.md) | Comprehensive mapping of adversary Tactics, Techniques, and Procedures (TTPs) with contextual procedure descriptions |
 | [Elastic Stack Detections](kql_detections.md) | Production-ready KQL queries, threshold alerting rules, and Elastic ML job configurations for detecting each phase of the attack |
+| [Evidence Gallery](Evidence.md) | Forensic artifact collection with mapped screenshots of each attack phase including PowerShell execution, persistence mechanisms, credential dumping, DCSync activity, DNS tunneling, and Elastic Security alerts |
