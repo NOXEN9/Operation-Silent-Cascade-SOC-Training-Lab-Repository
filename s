@@ -1,1 +1,1 @@
-![PowerShell Execution](./Evidence-Gallery/powershell_execution.png)
+![PowerShell Execution](Evidence-Gallery/powershell_execution.png)
